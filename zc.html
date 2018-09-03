@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>注册</title>
+<link rel="stylesheet" type="text/css" href="css/zc.css" >
+<link rel="stylesheet" type="text/css" href="css/public.css">
+</head>
+<body>
+<!-- zc_header -->
+<div class="zc_header ">
+	<div class="zc_header_con">
+		<img src="img/01.jpg" alt="">
+		<p>依《网络安全法》相关要求，即日起蘑菇街会员登陆需绑定手机。为保障您的账户安全及正常使用，如您尚未绑定，请尽快完成绑定，感谢您的理解和支持!</p>
+	</div>
+</div>
+
+<!-- content -->
+<div class="content">
+	<div class="content1">
+		<div class="emptyBox"></div>
+		<form action="">
+			<div class="ptdl">
+				<ul class="prtop">
+					<li class="on">欢迎注册</li>
+					<li>已有账号？<a href="login.html">去登录</a></li>					
+				</ul>
+				<div class="prbot">
+					<div class="spanDiv"><img src="img/heng01.png" alt=""><span id="spanMsg"></span></div>
+					<div class="yh"><input id="userId" type="text" placeholder="用户名（可以是数字、字母、下划线）"></div>
+					<div class="mm"><input id="passwordId" type="password" placeholder="密码（可以是数字、字母、下划线和符号 . - +）"></div>
+					<div class="mmm"><input id="passwordCheckId" type="password" placeholder="确认密码"></div>
+					<div class="dl"><input  id="btnzc" type="button" value="注 册"></div>
+					<div class="fw"><input type="checkbox" checked><span>我同意《服务条款》和《蘑菇街隐私政策》</span></div>
+				</div>
+			</div>
+		</form>	
+	</div>
+</div>
+	
+<!-- footer -->
+<div class="footer">
+		<div class="footer_top">
+			<dl>
+				<dt>-新手帮助-</dt>
+				<dd>
+					<a href="#">常见问题</a>
+					<a href="#">自助服务</a>
+					<a href="#">联系客服</a>
+					<a href="#">意见反馈</a>
+				</dd>
+			   
+			</dl>
+			<dl>
+				<dt>-权益保障-</dt>
+				<dd>
+					<a>全国包邮</a>
+					<a>7天无理由退货</a>
+					<a>退货运费补贴</a>
+					<a>限时发货</a>
+				</dd>
+				
+			</dl>
+			<dl>
+				<dt>-支付方式-</dt>
+				<dd>
+					<a>微信支付</a>
+					<a>支付宝</a>
+					<a>自付美支付</a>
+				</dd>
+				
+			</dl>
+			<dl>
+				<dt>-移动端客户下载-</dt>
+				<dd>
+					<a>蘑菇街<img src="img/ma01.png" alt=""></a>
+					<a>美丽说<img src="img/ma02.png" alt=""></a>
+					<a>uni引力<img src="img/ma03.png" alt=""></a>
+				</dd>
+				
+			</dl>
+		</div>
+		<div class="footer_bot">
+			<div class="footer_bot_c">
+				<a href="#">关于我们</a>
+				<a href="#">招聘信息</a>
+				<a href="#">联系我们</a>
+				<a href="#">商家入驻</a>
+				<a href="#">商家后台</a>
+				<a href="#">蘑菇商学院</a>
+				<a href="#">商家社区</a>
+				<a href="#">规则中心</a>
+				<a href="#">有害信息举报</a>
+				<span>©2017 Mogujie.com 杭州卷瓜网络有限公司</span>
+			</div>
+			<div class="footer_bot_f">
+				<span>营业执照:<a>913301065526808764</a>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				<span>网络文化经营许可证:<a>浙网文（2016）0349-219号</a>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				<span>增值电信业务经营许可证:<a>浙B2-20110349</a>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				<span>安全责任书:<a>浙公网安备 33010602002329号</a>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+			</div>
+			<div class="footer_bot_bot">
+				<a href="#">互联网药品信息服务资格证书编号：（浙)-经营性-2018-0002</a><span>|</span>
+				<a href="#">浙网食A33010003</a><span>|</span>
+				<a href="#">出版物网络交易平台服务经营备案证</a><span>|</span>
+				<a href="#">（浙）网械平台备字[2018]第00006号</a><span>|</span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script src="js/regExpUtil.js"></script>
+<script type="text/javascript" src="js/cookieTools.js" ></script>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+
+//正则判断
+$(function(){
+	$("#userId").blur(function(){
+		if(checkAll("userName",this.value)==false){
+			$(".ptdl").css("height","389px");
+			$(".spanDiv").css("display","block");
+			$("#spanMsg").html("长度只能在6-16个字符之间");
+		}
+	});
+
+	//鼠标按下事件
+	$("#userId").mousedown(function(){
+		$(".spanDiv").css("display","none");
+		$(".ptdl").css("height","348px");
+	});
+
+	$("#passwordId").blur(function(){
+		if(checkAll("password",this.value)==false){
+			$(".ptdl").css("height","389px");
+			$(".spanDiv").css("display","block");
+			$("#spanMsg").html("长度只能在8-16个字符之间");
+		}
+	})
+
+	//鼠标按下事件
+	$("#passwordId").mousedown(function(){
+		$(".spanDiv").css("display","none");
+		$(".ptdl").css("height","348px");
+	});
+
+	$("#passwordCheckId").blur(function(){
+		if(checkAll("password",this.value)==false || $("passwordId").value!=$("checkpasswordId").value){
+			$(".ptdl").css("height","389px");
+			$(".spanDiv").css("display","block");
+			$("#spanMsg").html("两次输入的密码不一致");
+		}
+	});
+
+	$("#passwordCheckId").mousedown(function(){
+		$(".spanDiv").css("display","none");
+		$(".ptdl").css("height","348px");
+	});
+
+});
+
+//连接数据库
+$(function(){
+	// 注册发送请求
+	$("#btnzc").click(function(){
+		var xhr = new XMLHttpRequest();		
+		xhr.open("post","php/loginCheckusername.php",true);		
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState==4 && xhr.status==200){
+				if(xhr.responseText==1){
+					//1)、保存cookie
+					addCookie("username",$("#userId").val(),7);
+					//2)、跳转到首页
+					location.href = "login.html";
+				}
+			}
+		}		
+		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");		
+		var str01="username="+$("#userId").val()+"&userpass="+$("#passwordId").val();
+		xhr.send(str01);
+	});
+
+	// 从数据库判断用户名是否存在
+	$("#userId").blur(function(){
+		var xhr = new XMLHttpRequest();		
+		xhr.open("post","php/loginCheck.php",true);		
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState==4 && xhr.status==200){
+				if(xhr.responseText==1){
+					$(".spanDiv").css("display","block");
+					$(".ptdl").css("height","389px");
+					$("#spanMsg").html("用户已存在");
+				}
+			}
+		}		
+		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");		
+		var str="username="+$("#userId").val();
+		xhr.send(str);
+	});
+
+});
+</script>
